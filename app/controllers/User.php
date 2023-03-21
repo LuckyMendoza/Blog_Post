@@ -27,16 +27,27 @@ public function signin()
             ->name('password')->required();
 
         if ($this->form_validation->run()) {
-            $user =$this->User_model->signin( $this->io->post('username') , $this->io->post('password'));
-            if($user){
-                $this->auth->set_logged_in($user['username']);
-                redirect('HomeController/Home');
-            }
-        }
+            
+	        $username=$this->io->post('username');
+			$password=$this->io->post('password');
+
+			$data = array(
+				'username' => $username,
+				'password' =>$password,
+				);
+
+			$row = $this->db->table('users') 					
+			->where($data)
+			->get();
+			if($row){
+			
+				redirect('HomeController/Home');
+			} 
+
+
+}
+          
     } 
-    $this->call->view('home');
-
-
 
 }
 

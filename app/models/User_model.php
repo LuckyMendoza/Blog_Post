@@ -20,19 +20,20 @@ class User_model extends Model
         $result= $this->db->table('users')->insert($data);
         if($result){
             return true;
-        }else {
-            return false;
-        }
+        // }else {
+        //     return false;
+        // }
     } 
+}
 
-    public function signin($username , $password){
+    // public function signin($username , $password){
         
-		$data= [
-			"username" => $username,
-			"password" => $password
-		];
-		return $this->db->table('users')->where($data)->get();
-    }
+	// 	$data= [
+	// 		"username" => $username,
+	// 		"password" => $password
+	// 	];
+	// 	return $this->db->table('users')->where($data)->get();
+    // }
 
 
 

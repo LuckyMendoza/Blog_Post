@@ -11,7 +11,8 @@
   <title>Responsive Multipage Blog Website</title>
   <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL . '/public/assets/style.css'?>">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-  <script src="//unpkg.com/alpinejs" defer></script>
+
+
 </head>
 
 <body>
