@@ -17,13 +17,15 @@
     <section class="form_section">
         <div class="container form_section-container">
             <h2>Sign Up</h2>
+          
+
+            <form action="<?=site_url('User/insert ')?>" method="post" enctype="multipart/form-data"   >
+
             <?php if(lava_instance()->session->has_userdata('status')){
 	            				echo alert_custom('status'); }
 		            		else if(lava_instance()->session->has_userdata('errors')) {
 		            			echo alert_custom('errors'); }
 		            	?>
-
-            <form action="<?=site_url('User/insert ')?>" method="post" enctype="multipart/form-data"   >
          
                 <input type="text" name="username" placeholder="Username"   required >
  

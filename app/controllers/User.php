@@ -10,13 +10,13 @@ class User extends Controller {
         $this->call->helper(array('url','alert','alert_message'));
     }
 
+
+
+//sign in user
 public function login(){
   
     $this->call->view('signin');
 }
-
-
-
 
 
 public function signin()
@@ -26,46 +26,51 @@ public function signin()
             ->name('username')->required()
             ->name('password')->required();
 
-        if ($this->form_validation->run()) {
+
+
+            if ($this->form_validation->run()) {
+                $username = $this->io->post('username');
+                $password = $this->io->post('password');
             
-	        $username=$this->io->post('username');
-			$password=$this->io->post('password');
-
-			$data = array(
-				'username' => $username,
-				'password' =>$password,
-				);
-
-			$row = $this->db->table('users') 					
-			->where($data)
-			->get();
-
-
-                if($this->session->has_userdata($row)){
-                    $this->session->set_flashdata(array('status', 'login sucess!'));
-                    	redirect('Blog_post/Home');
-                }
-                else{
-                    $this->session->set_flashdata(array('status', 'failed to login!'));
+                // Get data from database
+                $row = $this->db->table('users')
+                    ->where(['username' => $username, 'password' => $password])
+                    ->get();
+            
+                if ($row) {
+                    // Login successful, set session data
+                    $this->session->userdata('username', $username);
                     redirect('Blog_post/Home');
+                    $this->session->set_flashdata('status', 'Login sucess!');
+                } else {
+                    // Login failed
+                    $this->session->set_flashdata('errors', 'failed to login!');
+                    redirect('User/login');
                 }
+            }
+            
 
 
-          
+
+
+
+
+
+    }
 }
 
-    } 
-  
+
+public function logout(){
+
 }
 
 
 
 
-
+//registering and insert data to database
 public function register(){
     $this->call->view('signup');
 }
-
 
 
     public function  insert() {
@@ -107,8 +112,8 @@ public function register(){
                     $this->io->post('username'),
                     $this->io->post('email'),
                     $this->io->post('password'),
-                    $this->io->post('confirm_password'),
-                    $img
+                      $img
+                    
                 )){
                     
 
