@@ -3,6 +3,15 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
 class Blog_post extends Controller {
 
+
+    public function __construct() {
+        parent::__construct();
+        $this->call->model('User_model');
+        $this->call->library(array('database', 'session', 'form_validation'));
+        $this->call->helper(array('url','alert','alert_message'));
+    }
+
+
     public function Home(){
      $this->call->view('home');
        

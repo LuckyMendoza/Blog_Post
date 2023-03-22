@@ -30,11 +30,14 @@
       <li><a href="<?php echo BASE_URL . 'Blog_post/services'?>">Services</a></li>
       <li><a href="<?php echo BASE_URL .  'Blog_post/contact'?>">Contact</a></li>
 
-      <?php if(lava_instance()->session->has_userdata('username')): ?>
+
+   
+      
+     <?php if(isset($_SESSION['id'])):?>
         <!-- If user is logged in, show profile, dashboard, and logout links -->
         <li class="nav__profile">
           <div class="avatar">
-            <img src="<?php echo lava_instance()->session->userdata('avatar'); ?>" alt="Profile">
+            <img src="<?php echo BASE_URL . 'public/image' . $avatar['avatar']?>" alt="Profile">
           </div>
           <ul>
             <li><a href="dashboard.html">Dashboard </a></li>
