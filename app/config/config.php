@@ -155,7 +155,7 @@ $config['charset']					= 'UTF-8';
 | This config will be used in the Router Class inside kernel.
 |
 */
-$config['default_controller'] 		= 'HomeController';
+$config['default_controller'] 		= 'Blog_post';
 $config['default_method'] 			= 'Home';
 
 /*
