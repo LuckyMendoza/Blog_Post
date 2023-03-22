@@ -39,18 +39,23 @@ public function signin()
 			$row = $this->db->table('users') 					
 			->where($data)
 			->get();
-            
-			if($row){
-                
-                $this->session->set_flashdata(array('status', 'login sucess!'));
-				redirect('Blog_post/Home');
-			} else {
-                redirect('User/login');
-            }
+
+
+                if($this->session->has_userdata($row)){
+                    $this->session->set_flashdata(array('status', 'login sucess!'));
+                    	redirect('Blog_post/Home');
+                }
+                else{
+                    $this->session->set_flashdata(array('status', 'failed to login!'));
+                    redirect('Blog_post/Home');
+                }
+
+
+          
 }
 
     } 
-    $this->call->view('home');
+  
 }
 
 

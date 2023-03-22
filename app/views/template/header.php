@@ -32,18 +32,19 @@
         <li><a href="<?php echo BASE_URL . 'Blog_post/services'?>">Services</a></li>
         <li><a href="<?php echo BASE_URL .  'Blog_post/contact'?>">Contact</a></li>
         
-        <?php if(isset($_SESSION['username'])):?>
+        <li><a href="<?php echo BASE_URL .  'Blog_post/signin'?>">Sign In</a></li>
+        
         <li class="nav__profile">
           <div class="avatar">
-            <img src="<?php echo $_SESSION['username']['avatar'];?>" alt="Profile ">
+            <img src="" alt="Profile ">
           </div>
           <ul>
             <li><a href="dashboard.html">Dashboard </a></li>
             <li><a href="logout.html">Logout</a> </li>
         </li>
-        <?php else: ?>
-        <li><a href="<?php echo BASE_URL .  'Blog_post/signin'?>">Sign In</a></li>
-        <?php endif; ?>
+
+    
+      
        
       </ul>
 
