@@ -20,11 +20,11 @@ class User_model extends Model
         $result= $this->db->table('users')->insert($data);
         if($result){
             return true;
-        // }else {
-        //     return false;
-        // }
+        }else {
+             return false;
+         }
     } 
-}
+
 
     // public function signin($username , $password){
         

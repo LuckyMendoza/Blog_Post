@@ -39,16 +39,18 @@ public function signin()
 			$row = $this->db->table('users') 					
 			->where($data)
 			->get();
+            
 			if($row){
-			
-				redirect('HomeController/Home');
-			} 
-
-
+                
+                $this->session->set_flashdata(array('status', 'login sucess!'));
+				redirect('Blog_post/Home');
+			} else {
+                redirect('User/login');
+            }
 }
-          
-    } 
 
+    } 
+    $this->call->view('home');
 }
 
 
@@ -111,7 +113,6 @@ public function register(){
                 } else {
                     $this->session->set_flashdata( array('errors', 'Failed to register user.'));
                
-
                     exit;
                 }
                    

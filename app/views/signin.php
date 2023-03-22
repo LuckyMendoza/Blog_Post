@@ -14,7 +14,7 @@
 		            			echo alert_custom('errors'); }
 		            	?>
 
-            <form action="<?php echo BASE_URL . 'User/signin'?> " method="post" >
+            <form action="<?php echo BASE_URL . 'User/signin'?> " method="post" x-data="{ form: {} }" >
               
                             
                 
@@ -27,6 +27,5 @@
             </form>
         </div>
     </section>
-
 
     <?php include 'template/footer.php';?> 

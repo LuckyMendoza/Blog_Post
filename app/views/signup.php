@@ -1,6 +1,19 @@
 <?php include 'template/header.php';?> 
 
 
+<!-- <script>
+    window.livewire = function() {
+        return {
+            validateUsername(username) {
+                return username !== '';
+            }
+        }
+    }
+</script>
+
+ -->
+
+
     <section class="form_section">
         <div class="container form_section-container">
             <h2>Sign Up</h2>
@@ -12,14 +25,13 @@
 
             <form action="<?=site_url('User/insert ')?>" method="post" enctype="multipart/form-data"   >
          
-                
-                <input type="text" name="username" placeholder="Username"  required  >
-                
+                <input type="text" name="username" placeholder="Username"   required >
+ 
                 <input type="email" name="email" placeholder="Email"   required >
         
                 <input type="password" name="password" placeholder=" Create Password" required >
                 <input type="password" name="confirm_password" placeholder="Confirm Password" required  >
-                <div class="form_control"> r
+                <div class="form_control"> 
                     <label User Avatar</label>
                     <input type="file"  name="avatar"     id="avatar"  multiple="true"  accept="image/*" required>
                 </div>
@@ -30,6 +42,10 @@
         </div>
     </section>
     
+
+  
+
+
 
 
 

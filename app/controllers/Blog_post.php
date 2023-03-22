@@ -1,7 +1,7 @@
 <?php
 defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
-class HomeController extends Controller {
+class Blog_post extends Controller {
 
     public function Home(){
      $this->call->view('home');
