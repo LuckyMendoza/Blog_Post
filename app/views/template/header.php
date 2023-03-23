@@ -20,7 +20,6 @@
 <body>
 
   <!--==========================Navigation==============================-->
-
   <nav>
   <div class="container nav__container">
     <a href="" class="nav__logo">LavaLods</a>
@@ -30,30 +29,26 @@
       <li><a href="<?php echo BASE_URL . 'Blog_post/services'?>">Services</a></li>
       <li><a href="<?php echo BASE_URL .  'Blog_post/contact'?>">Contact</a></li>
 
-
-   
-      
-     <?php if(isset($_SESSION['id'])):?>
+      <?php if(!isset($_SESSION['username'])) { ?>
         <!-- If user is logged in, show profile, dashboard, and logout links -->
         <li class="nav__profile">
           <div class="avatar">
-            <img src="<?php echo BASE_URL . 'public/image' . $avatar['avatar']?>" alt="Profile">
+            <img src=" alt="Profile">
           </div>
           <ul>
-            <li><a href="dashboard.html">Dashboard </a></li>
-            <li><a href="logout.html">Logout</a></li>
+            <li><a href="<?php echo BASE_URL . 'Blog_post/dashbaord'?>">Profile</a></li>
+            <li><a href="<?=site_url('Blog_post/dashboard')?>">Dashboard</a></li>
+            <li><a href="<?php echo BASE_URL . 'User/logout'?>">Logout</a></li>
           </ul>
         </li>
-      <?php else: ?>
+        <?php } else { ?>
         <!-- If user is not logged in, show the Sign In button -->
         <li><a href="<?php echo BASE_URL .  'Blog_post/signin'?>">Sign In</a></li>
-      <?php endif; ?>
+        <?php } ?>
     </ul>
-
-    <button id="open_nav-btn"><i class="uil ulil-bars"></i> </button>
-    <button id="close_nav-btn"><i class="uil ulil-bars"></i> </button>
   </div>
 </nav>
+
 
 
 

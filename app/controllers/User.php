@@ -44,23 +44,18 @@ public function signin()
                     $this->session->set_flashdata('status', 'Login sucess!');
                 } else {
                     // Login failed
-                    $this->session->set_flashdata('errors', 'failed to login!');
+                    $this->session->set_flashdata('errors', 'Invalid Username and Password!');
                     redirect('User/login');
                 }
             }
             
-
-
-
-
-
-
 
     }
 }
 
 
 public function logout(){
+    
 
 }
 

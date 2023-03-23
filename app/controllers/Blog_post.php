@@ -17,9 +17,6 @@ class Blog_post extends Controller {
        
     }
 
-
-    
-
     public function about(){
         $this->call->view('about');
 
@@ -38,7 +35,9 @@ class Blog_post extends Controller {
         $this->call->view('signin');
 
     }
-    //    }
+    public function dashboard(){
+        $this->call->view('dashboard');
+    }
 
 
 
