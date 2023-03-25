@@ -55,8 +55,11 @@ public function signin()
 
 
 public function logout(){
-    
-
+     
+		$this->session->sess_destroy();
+		redirect ('Blog_post/Home');
+		exit;
+        
 }
 
 
