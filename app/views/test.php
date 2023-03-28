@@ -1,7 +1,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +10,8 @@
     <title>Document</title>
 </head>
 <body>
-    <?php 
-    echo print_r($user);
-    ?>
+<h1>Welcome</h1>
+
+
 </body>
 </html>

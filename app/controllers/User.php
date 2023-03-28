@@ -33,26 +33,30 @@ public function signin()
                 $password = $this->io->post('password');
             
                 // Get data from database
-                $row = $this->db->table('users')
+            $row = $this->db->table('users')
+              
                     ->where(['username' => $username, 'password' => $password])
                     ->get();
+
+               
             
-                if ($row) {
+               if ($row) {
                     // Login successful, set session data
-                    $this->session->userdata('username', $username);
-                    redirect('Blog_post/Home');
-                    $this->session->set_flashdata('status', 'Login sucess!');
-                } else {
-                    // Login failed
-                    $this->session->set_flashdata('errors', 'Invalid Username and Password!');
-                    redirect('User/login');
-                }
+                     $this->session->set_userdata('username', $username);
+                     redirect('Blog_post/dashboard');
+             
+                     $this->session->set_flashdata('status', 'Welcome', $username);
+                 } else {
+                     // Login failed
+                     $this->session->set_flashdata('errors', 'Invalid Username and Password!');
+                     redirect('User/login');
+                 }
+             
+        
             }
-            
 
     }
 }
-
 
 public function logout(){
      

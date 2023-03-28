@@ -39,6 +39,15 @@ class Blog_post extends Controller {
         $this->call->view('dashboard');
     }
 
+    //----------add post function ------------------//
+    public function add_post(){
+        $this->call->view('add_post');
+
+    }
+    public function addPost(){
+            
+    }
+
 
 
 }

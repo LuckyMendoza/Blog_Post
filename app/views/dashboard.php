@@ -9,19 +9,19 @@
     <aside>
       <ul>
         <li>
-          <a href="<?php echo BASE_URL . 'add-post'?> " >
+          <a href="<?php echo BASE_URL . 'Blog_post/add_post'?> " >
               <i class="uil uil-pen"></i>
             <h5>Add Post</h5>
           </a>
         </li>
         <li>
-            <a href="dashboard.html" >
+            <a href="<?php echo BASE_URL . 'dashbaord'?>" >
                 <i class="uil uil-postcard"></i>
               <h5>Mana ge Post</h5>
             </a>
           </li>
         <li>
-            <a href="add-user.html" >
+            <a href="<?php echo BASE_URL . 'add-user'?>" >
                 <i class="uil uil-user-plus"></i>
               <h5>Add User</h5>
             </a>
@@ -33,7 +33,7 @@
             </a>
           </li>
           <li>
-            <a href="manage-categories.html" >
+            <a href="<?php echo BASE_URL . 'category-posts'?>" >
                 <i class="uil uil-list-ul"></i>
               <h5>Manage Categories</h5>
             </a>

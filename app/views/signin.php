@@ -1,5 +1,6 @@
 <?php include 'template/header.php';?> 
 
+
     <section class="form_section">
         <div class="container form_section-container">
             <h2>Sign In</h2>
@@ -15,8 +16,7 @@
             <?php if(lava_instance()->session->has_userdata('status')){
 	            				echo alert_custom('status'); }
 		            		else if(lava_instance()->session->has_userdata('errors')) {
-		            			echo alert_custom('errors'); }
-		            	?> 
+		            			echo alert_custom('errors'); }?> 
                 
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="  Password"  required>
@@ -29,3 +29,4 @@
     </section>
 
     <?php include 'template/footer.php';?> 
+

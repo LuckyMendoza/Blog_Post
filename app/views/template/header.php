@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,10 +9,12 @@
   <meta charset=" UTF-8">
   <meta http-equiv="X-UA-Compatible" content="  IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Multipage Blog Website</title>
+  <title> Blog Website</title>
   <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL . '/public/assets/style.css'?>">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+  <script src="<?php echo BASE_URL . '/public/assets/signin.js'?>"></script>
 <!-- //alphine js valifdation
   <script src="//unpkg.com/alpinejs" defer></script> -->
   
@@ -22,18 +25,19 @@
   <!--==========================Navigation==============================-->
   <nav>
   <div class="container nav__container">
-    <a href="" class="nav__logo">LavaLods</a>
+    <a href="" class="nav__logo">Lavalust Project</a>
     <ul class="nav__items">
       <li><a href="<?php echo BASE_URL . 'Blog_post/Home'?>">Blog</a></li>
       <li><a href="<?php echo BASE_URL . 'Blog_post/about'?>">About</a></li>
       <li><a href="<?php echo BASE_URL . 'Blog_post/services'?>">Services</a></li>
       <li><a href="<?php echo BASE_URL .  'Blog_post/contact'?>">Contact</a></li>
 
-      <?php if(!isset($_SESSION['username'])) { ?>
+      <?php if( isset($_SESSION['username'])) { ?>
+      
         <!-- If user is logged in, show profile, dashboard, and logout links -->
         <li class="nav__profile">
           <div class="avatar">
-            <img src=" alt="Profile">
+            <img src="" alt="Profile">
           </div>
           <ul>
             <li><a href="<?php echo BASE_URL . 'Blog_post/dashbaord'?>">Profile</a></li>
