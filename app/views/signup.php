@@ -29,7 +29,7 @@
          
                 <input type="text" name="username" placeholder="Username"   required >
  
-                <input type="email" name="email" placeholder="Email"   required >
+              
         
                 <input type="password" name="password" placeholder=" Create Password" required >
                 <input type="password" name="confirm_password" placeholder="Confirm Password" required  >

@@ -35,14 +35,17 @@ public function signin()
                 // Get data from database
             $row = $this->db->table('users')
               
-                    ->where(['username' => $username, 'password' => $password])
+                    ->where(['username' => $username, 'password' => $password, ])
                     ->get();
 
                
             
                if ($row) {
                     // Login successful, set session data
-                     $this->session->set_userdata('username', $username);
+               
+                     $this->session->set_userdata('username', $username);   
+                     $this->session->set_userdata('is_admin', $row['is_admin']); // Set is_admin in session             
+                     $this->session->set_userdata('avatar', $row['avatar']); // Set user's avatar in session
                      redirect('Blog_post/dashboard');
              
                      $this->session->set_flashdata('status', 'Welcome', $username);
@@ -80,9 +83,7 @@ public function register(){
         if ($this->form_validation->submitted()) {
             
             $this->form_validation
-                ->name('username')->required()
-                ->name('email')->required()
-                ->valid_email()
+                ->name('username')->required()         
                 ->name('password')->required()
                 ->name('confirm_password')->required()->matches('password');
             
@@ -112,7 +113,6 @@ public function register(){
     
                 if ($this->User_model->signup(
                     $this->io->post('username'),
-                    $this->io->post('email'),
                     $this->io->post('password'),
                       $img
                     
