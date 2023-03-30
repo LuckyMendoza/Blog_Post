@@ -8,13 +8,13 @@
             <h2>Edit User</h2>
           
 
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="<?php echo BASE_URL . 'Blog_post/update_user'?> " method="post" enctype="multipart/form-data">
               
                
-                <input type="text" name="first_name" placeholder="First Name">
-                <input type="text" name="last_name" placeholder="Last Name">
+                <input type="text" name="username"  value="<?php echo $data['username']; ?>" placeholder="Username">
+               
                 
-                <select name="" id="">
+                <select name="is_admin" value= "<?php echo $data['is_admin'];?>" id="">
                     <option value="0">Author</option>
                     <option value="1">Admin</option>
                    

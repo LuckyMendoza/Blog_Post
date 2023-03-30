@@ -52,19 +52,21 @@
           <tr>
              
             <th>Username</th>
+            <th>Admin</th>
               <th>Edit</th>
               <th>Delete</th>
-              <th>Admin</th>
+             
           </tr>
          
 
           <?php foreach ($data as $datum):?>
                 <tbody>
                   <tr>         
-                  <td><?php echo $datum['username'];?></td>                      
-                  <td><a class="btn sm"  href="">Edit</a></td>
-                  <td><a  class="btn danger" href="">Delete</a></td>
-                  <td><?php echo $datum['is_admin'];?></td>
+                  <td><?php echo $datum['username'];?></td>   
+                  <td><?php echo $datum['is_admin'];?></td>                   
+                  <td><a class="btn sm"  href="<?=site_url('Blog_post/edit_user/'.$datum['id'].''); ?>">Edit</a></td>
+                  <td><a  class="btn danger" href="<?php echo BASE_URL. 'Blog_post/delete_user' .$datum['id'].''?>">Delete</a></td>
+           
                   </tr>   
                 </tbody>
                 <?php endforeach; ?>

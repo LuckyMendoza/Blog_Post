@@ -104,12 +104,48 @@ class Blog_post extends Controller {
 }
 
 //-----------------------------------------------------Manage user functions--------------------
-    public function manage_users(){
+ public function manage_users(){
         $data = $this->BlogPost_model->get_users();
         $this->call->view('manage_user', $data);
     }
 
+  //deleting users
+public function delete_user($id){
+	if ($this->BlogPost_model->delete_user($id))
+	  redirect ('Blog_post/manage_users');
+	
+  }
+  // edit user
+public function edit_user($id){
 
+    $data= $this->BlogPost_model->edit_user($id);
+    $this->call->view('edit_user',$data);
+}
+
+
+public function update_user()
+{
+    
+    if ($this->form_validation->submitted())
+    {
+        $this->form_validation
+        ->name('username')->required()         
+        ->name('is_admin')->required();
+ 
+        if($this->form_validation->run()){
+                      
+            if( $this->BlogPost_model->update_user(
+                $this->io->post('username'),
+                $this->io->post('is_admin'))){
+         
+           $this->session->set_flashdata('status', 'User was Successfully Updated');
+           redirect('Blog_post/manage_users');
+           exit;
+            }
+         }
+      }
+    }
+    
 
 
      

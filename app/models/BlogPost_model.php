@@ -4,7 +4,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 class BlogPost_model extends Model {
 
 
-//table for users
+//---------this is for add userrr
     public function add_user(  $username,  $password  , $avatar, $is_admin, ) 
     {
         $created_at = date('Y-m-d H:i:s');
@@ -25,11 +25,65 @@ class BlogPost_model extends Model {
              return false;
          }
     } 
+
+//-----------------this is for the manage users table-----
     //retrive users
     public  function get_users(){
         return $this->db->table('users')->get_all();
     }
 
-	
+	//edit user
+    
+public function edit_user($id){
+    return $this->db->table('users')
+    ->where('id',$id)
+    ->get();
+  }
+
+
+//update user
+
+public function update_user($id,$username,$is_admin){
+
+    $data = array(
+        
+            'username'=>$username,
+            'is_admin'=>$is_admin
+    );
+       $result = $this->db->table('users')
+       ->update($data)
+       ->where('id',$id)
+       
+       ->exec();
+  
+       if($result){        
+            return true;  
+       }else   {
+        return false;
+       }    
+       
+}
+
+
+
+
+
+//delete user
+
+public function delete_user($id){
+    $result = $this->db->table('users')   
+                    ->where(array('id' => $id))    
+                    ->delete();             
+                   
+       if ($result){
+         return true;
+    }else {
+        return false;
+    }
+  }
+
+  
+   
+  
 }
 ?>
