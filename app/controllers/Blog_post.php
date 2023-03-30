@@ -36,7 +36,7 @@ class Blog_post extends Controller {
 
     }
     public function dashboard(){
-        $this->call->view('');
+        $this->call->view('dashboard');
     }
 
 
@@ -47,6 +47,7 @@ class Blog_post extends Controller {
     }
 
     public function addUser(){
+        $data = $this->BlogPost_model->get_users();
         if ($this->form_validation->submitted()) {
             
             $this->form_validation
@@ -102,14 +103,22 @@ class Blog_post extends Controller {
     }
 }
 
-
+//--------------------Manage user functions--------------------
     public function manage_users(){
         $this->call->view('manage_user');
     }
 
 
+    public function get_users(){
+        $data['users'] = $this->BlogPost_model->get_users();
+		$this->call->view('manage_user', $data);
+    }
+
+
      
-    
+
+
+
 
     //-------------------------------------------------add post function -----------//
     public function add_post(){

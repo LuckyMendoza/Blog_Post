@@ -1,6 +1,6 @@
 <?php include 'template/header.php';?> 
 
-<?php include 'template/sidebar.php';?> 
+
 
 
     <section class="form_section">
@@ -33,6 +33,5 @@
             </form>
         </div>
     </section>
-    
 
     <?php include 'template/footer.php';?> 

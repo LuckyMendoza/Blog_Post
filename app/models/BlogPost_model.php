@@ -25,6 +25,10 @@ class BlogPost_model extends Model {
              return false;
          }
     } 
+    //retrive users
+    public  function get_users(){
+        return $this->db->table('users')->get_all();
+    }
 
 	
 }
