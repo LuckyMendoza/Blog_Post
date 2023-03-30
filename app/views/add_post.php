@@ -6,9 +6,7 @@
     <section class="form_section">
         <div class="container form_section-container">
             <h2>Add Post</h2>
-            <div class="alert_message success">
-                <p>This is an success message</p>
-            </div>
+        
 
             <form action="" method="post" enctype="multipart/form-data">
               

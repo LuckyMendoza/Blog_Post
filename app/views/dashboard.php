@@ -1,6 +1,7 @@
 <?php include 'template/header.php';?> 
 
 
+
 <section class="dashboard">
   <div class="container dashboard_container">
 <!-- 
@@ -10,13 +11,13 @@
   <ul>
     <?php if(isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1) { ?>
       <li>
-        <a href="<?php echo BASE_URL . 'add-user'?>" >
+        <a href="<?php echo BASE_URL . 'Blog_post/add_user'?>" >
           <i class="uil uil-user-plus"></i>
           <h5>Add User</h5>
         </a>
       </li>
       <li>
-        <a href="<?php echo BASE_URL . 'manage-users'?>" >
+        <a href="<?php echo BASE_URL . 'Blog_post'?>" >
           <i class="uil uil-users-alt"></i>
           <h5>Manage User</h5>
         </a>

@@ -14,13 +14,19 @@
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <script src="<?php echo BASE_URL . '/public/assets/signin.js'?>"></script>
+  <!---js alert message-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+
+  <script src="<?php echo BASE_URL . '/public/assets/js/alert.js' ?>"></script>
+
+
 <!-- //alphine js valifdation
   <script src="//unpkg.com/alpinejs" defer></script> -->
   
 </head>
 
 <body>
+
 
   <!--==========================Navigation==============================-->
   <nav>

@@ -8,6 +8,7 @@ class User extends Controller {
         $this->call->model('User_model');
         $this->call->library(array('database', 'session', 'form_validation'));
         $this->call->helper(array('url','alert','alert_message'));
+        $this->call->library('session');
     }
 
 
@@ -38,17 +39,26 @@ public function signin()
                     ->where(['username' => $username, 'password' => $password, ])
                     ->get();
 
-               
-            
+                         
                if ($row) {
                     // Login successful, set session data
                
                      $this->session->set_userdata('username', $username);   
                      $this->session->set_userdata('is_admin', $row['is_admin']); // Set is_admin in session             
-                     $this->session->set_userdata('avatar', $row['avatar']); // Set user's avatar in session
+                     $this->session->set_userdata('avatar', $row['avatar']); 
+                     $this->session->set_flashdata('status', 'Welcome', $username);
+                     echo "<script>Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your work has been saved',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })</script>";
+    
                      redirect('Blog_post/dashboard');
              
-                     $this->session->set_flashdata('status', 'Welcome', $username);
+             
+                    //  $this->session->set_flashdata('status', 'Welcome', $username);
                  } else {
                      // Login failed
                      $this->session->set_flashdata('errors', 'Invalid Username and Password!');

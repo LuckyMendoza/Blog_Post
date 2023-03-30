@@ -5,30 +5,29 @@
     <section class="form_section">
         <div class="container form_section-container">
             <h2>Add User</h2>
-            <div class="alert_message success">
-                <p>This is an success message</p>
-            </div>
 
-            <form action="" method="post" enctype="multipart/form-data">
+            
+            <?php if(lava_instance()->session->has_userdata('status')){
+	            				echo alert_custom('status'); }
+		            		else if(lava_instance()->session->has_userdata('errors')) {
+		            			echo alert_custom('errors'); }
+		            	?>
+        
+
+            <form action=<?php echo BASE_URL . 'Blog_post/addUser'?>  method="post" enctype="multipart/form-data">
               
                
-                <input type="text" name="first_name" placeholder="First Name">
-                <input type="text" name="last_name" placeholder="Last Name">
                 <input type="text" name="username" placeholder="Username">
-                <input type="email" name="email" placeholder="Email">
                 <input type="password" name="password" placeholder=" Create Password">
                 <input type="password" name="confirm_password" placeholder="Confirm Password">
-                <select name="" id="">
+                <select name="is_admin" id="">
                     <option value="0">Author</option>
-                    <option value="1">Admin</option>
-                   
+                    <option value="1">Admin</option>      
                 </select>
-            
-               
-                <div class="form_control">
-                    <label for="avatar">User Avatar</label>
-                    <input type="file" id="Avatar">
-                </div>
+                <div class="form_control"> 
+                    <label User Avatar</label>
+                    <input type="file"  name="avatar"     id="avatar"  multiple="true"  accept="image/*" required>
+                </div>          
 
             
                 <button type="submit" class="btn">Add User</button>
