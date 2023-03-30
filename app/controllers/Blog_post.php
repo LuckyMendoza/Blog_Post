@@ -110,10 +110,6 @@ class Blog_post extends Controller {
     }
 
 
-    // public function get_users(){
-    //     $data['users'] = $this->BlogPost_model->get_users();
-	// 	$this->call->view('manage_user', $data);
-    // }
 
 
      
