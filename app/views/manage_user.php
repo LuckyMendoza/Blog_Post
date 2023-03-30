@@ -61,11 +61,10 @@
           <?php foreach ($data as $datum):?>
                 <tbody>
                   <tr>         
-                  <td><?php echo $datum['username'];?></td>
-                  <td><?php echo $datum['password'];?></td>
-                  <td><?php echo $datum['is_admin'];?></td>
+                  <td><?php echo $datum['username'];?></td>                      
                   <td><a class="btn sm"  href="">Edit</a></td>
                   <td><a  class="btn danger" href="">Delete</a></td>
+                  <td><?php echo $datum['is_admin'];?></td>
                   </tr>   
                 </tbody>
                 <?php endforeach; ?>

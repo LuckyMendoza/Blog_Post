@@ -41,13 +41,13 @@ class Blog_post extends Controller {
 
 
 
-    //------------------------------------------------add User function--------------//
+    //------------------------------------------------Add User function-------------------//
     public function add_user(){
         $this->call->view('add_user');
     }
 
     public function addUser(){
-        $data = $this->BlogPost_model->get_users();
+      
         if ($this->form_validation->submitted()) {
             
             $this->form_validation
@@ -99,20 +99,21 @@ class Blog_post extends Controller {
             }
             
         }
-
+     
     }
 }
 
-//--------------------Manage user functions--------------------
+//-----------------------------------------------------Manage user functions--------------------
     public function manage_users(){
-        $this->call->view('manage_user');
+        $data = $this->BlogPost_model->get_users();
+        $this->call->view('manage_user', $data);
     }
 
 
-    public function get_users(){
-        $data['users'] = $this->BlogPost_model->get_users();
-		$this->call->view('manage_user', $data);
-    }
+    // public function get_users(){
+    //     $data['users'] = $this->BlogPost_model->get_users();
+	// 	$this->call->view('manage_user', $data);
+    // }
 
 
      
