@@ -17,7 +17,7 @@
         </a>
       </li>
       <li>
-        <a href="<?php echo BASE_URL . 'Blog_post'?>" >
+        <a href="<?php echo BASE_URL . 'Blog_post/manage_users'?>" >
           <i class="uil uil-users-alt"></i>
           <h5>Manage User</h5>
         </a>
@@ -45,46 +45,6 @@
 </aside>
 
 
-<main>
-    <h2>Manage Categories</h2>
-    <table>
-        <thead>
-          <tr>
-              <th>Title</th>
-              <th>Edit</th>
-              <th>Delete</th>
-          </tr>
-          <tbody>
-              <tr>
-                  <td>Travel</td>
-                  <td><a href="edit-category.html" class="btn sm">Edit</a></td>
-                  <td><a href="delete-category.html" class="btn danger">Delete</a></td>
-              </tr>
-              <tr>
-                <td>Wild Life</td>
-                <td><a href="edit-category.html">Edit</a></td>
-                <td><a href="delete-category.html">Delete</a></td>
-            </tr>
-            <tr>
-                <td>Travel</td>
-                <td><a href="edit-category.html">Edit</a></td>
-                <td><a href="delete-category.html">Delete</a></td>
-            </tr>
-          </tbody>
-
-        </thead>
-    </table>
-</main>
-
-
-
-
-
-
-
-
-  </div>
-</section>
 
 
 

@@ -36,21 +36,11 @@ class Blog_post extends Controller {
 
     }
     public function dashboard(){
-        $this->call->view('dashboard');
+        $this->call->view('');
     }
 
 
 
-
-    //-------------------------------------------------add post function -----------//
-    public function add_post(){
-        $this->call->view('add_post');
-
-    }
-    public function addPost(){
-
-              
-    }
     //------------------------------------------------add User function--------------//
     public function add_user(){
         $this->call->view('add_user');
@@ -111,9 +101,25 @@ class Blog_post extends Controller {
 
     }
 }
+
+
+    public function manage_users(){
+        $this->call->view('manage_user');
+    }
+
+
      
     
 
+    //-------------------------------------------------add post function -----------//
+    public function add_post(){
+        $this->call->view('add_post');
+
+    }
+    public function addPost(){
+
+              
+    }
 
 
 
