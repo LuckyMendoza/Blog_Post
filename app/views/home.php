@@ -22,19 +22,19 @@
   <section class="featured">
     <div class="container featured_container">
       <div class="post_thumbnail">
-        <img src="" alt="blog1.jpg">
+        <img src="<?php echo BASE_URL . '/public/img/doc32.jpg'?>" alt="blog1.jpg">
       </div>
       <div class="post_info">
         <a href="category-posts.html" class="category_button">Wild Life</a>
         <h2 class="post_title"><a href="post.html">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-            iure autem nobis qui aliquam incidunt porro eos repellendus amet accusamus.</a></h2>
+          o eos repellendus amet accusamus.</a></h2>
         <p class="post_body">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci rerum sunt maxime recusandae tempore aperiam
-          aut iusto, perferendis vero sint!
+     
         </p>
         <div class="post_author">
           <div class="post_author-avatar">
-            <img src="" alt="dto ay author image">
+            <img src="">
           </div>
           <div class="post_author-info">
             <h5>By:JaneDoe</h5>
@@ -56,7 +56,7 @@
 
       <article class="post">
         <div class="post_thumbnail">
-          <img src="" alt="blog2">
+          <img src="<?php echo BASE_URL . '/public/img/doc32.jpg'?>" alt="dto ay author image"" alt="blog2">
         </div>
         <div class="post_info">
           <a href="/category-posts" class="category_button">Wild Life</a>
@@ -66,8 +66,8 @@
             </a>
           </h3>
           <p class="post_body">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos repellendus assumenda, architecto nisi optio
-            fugiat delectus adipisci quibusdam cum vitae.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. E
+        
 
           </p>
 
@@ -84,66 +84,10 @@
         </div>
 
       </article>
-      <article class="post">
-        <div class="post_thumbnail">
-          <img src="" alt="blog2">
-        </div>
-        <div class="post_info">
-          <a href="/category-posts" class="category_button">Wild Life</a>
-          <h3 class="post_title">
-            <a href="#">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis, deserunt.
 
-            </a>
-          </h3>
-          <p class="post_body">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos repellendus assumenda, architecto nisi optio
-            fugiat delectus adipisci quibusdam cum vitae.
+   
 
-          </p>
-
-          <div class="post_author">
-            <div class="post_author_avatar">
-              <img src="#" alt="">
-            </div>
-            <div class="post_author_info">
-              <h5>by:sasasas</h5>
-              <small>February14, 2023</small>
-            </div>
-
-          </div>
-        </div>
-
-      </article>
-      <article class="post">
-        <div class="post_thumbnail">
-          <img src="" alt="blog2">
-        </div>
-        <div class="post_info">
-          <a href="/category-posts" class="category_button">Wild Life</a>
-          <h3 class="post_title">
-            <a href="#">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis, deserunt.
-
-            </a>
-          </h3>
-          <p class="post_body">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos repellendus assumenda, architecto nisi optio
-            fugiat delectus adipisci quibusdam cum vitae.
-
-          </p>
-
-          <div class="post_author">
-            <div class="post_author_avatar">
-              <img src="#" alt="">
-            </div>
-            <div class="post_author_info">
-              <h5>by:sasasas</h5>
-              <small>February14, 2023</small>
-            </div>
-
-          </div>
-        </div>
-
-      </article>
+     
 
     </div>
   </section>

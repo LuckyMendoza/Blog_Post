@@ -122,7 +122,7 @@ public function edit_user($id){
     $this->call->view('edit_user',$data);
 }
 
-
+//update user
 public function update_user()
 {
     
@@ -134,13 +134,16 @@ public function update_user()
  
         if($this->form_validation->run()){
                       
-            if( $this->BlogPost_model->update_user(
-                $this->io->post('username'),
-                $this->io->post('is_admin'))){
+             $this->BlogPost_model->update_user(
+             $this->io->post('id'),
+             $this->io->post('username'),
+             $this->io->post('is_admin'));{
          
            $this->session->set_flashdata('status', 'User was Successfully Updated');
            redirect('Blog_post/manage_users');
-           exit;
+           
+			
+        
             }
          }
       }

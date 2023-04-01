@@ -10,9 +10,9 @@
 
             <form action="<?php echo BASE_URL . 'Blog_post/update_user'?> " method="post" enctype="multipart/form-data">
               
-               
+             <input type="hidden" name="id" value="<?= $data['id'];?>">
                 <input type="text" name="username"  value="<?php echo $data['username']; ?>" placeholder="Username">
-               
+     
                 
                 <select name="is_admin" value= "<?php echo $data['is_admin'];?>" id="">
                     <option value="0">Author</option>

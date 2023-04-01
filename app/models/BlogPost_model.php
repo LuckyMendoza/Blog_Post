@@ -26,13 +26,14 @@ class BlogPost_model extends Model {
          }
     } 
 
-//-----------------this is for the manage users table-----
+//-----------------this is for the manage users table------
     //retrive users
     public  function get_users(){
         return $this->db->table('users')->get_all();
     }
+    
 
-	//edit user
+//edit user
     
 public function edit_user($id){
     return $this->db->table('users')
@@ -50,18 +51,12 @@ public function update_user($id,$username,$is_admin){
             'username'=>$username,
             'is_admin'=>$is_admin
     );
-       $result = $this->db->table('users')
-       ->update($data)
-       ->where('id',$id)
+       $this->db->table('users')
+       ->where(array('id'=>$id))
+       ->update($data);
+      
        
-       ->exec();
-  
-       if($result){        
-            return true;  
-       }else   {
-        return false;
-       }    
-       
+     
 }
 
 
