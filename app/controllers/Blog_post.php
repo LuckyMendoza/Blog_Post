@@ -109,12 +109,24 @@ class Blog_post extends Controller {
         $this->call->view('manage_user', $data);
     }
 
-  //deleting users
-public function delete_user($id){
-	if ($this->BlogPost_model->delete_user($id))
-	  redirect ('Blog_post/manage_users');
-	
-  }
+//   //deleting users
+// public function delete_user($id){
+// 	$this->BlogPost_model->delete_user($id);
+// 	  redirect ('Blog_post/manage_user');
+// 	exit;
+//   }
+
+
+public function delete_user($id) {
+    if($this->BlogPost_model->delete_user($id)) 
+    {
+        $this->session->set_flashdata('status', 'Successfully deleted.');
+        redirect('Blog_post/manage_users');
+       
+        exit;
+    }
+}
+
   // edit user
 public function edit_user($id){
 

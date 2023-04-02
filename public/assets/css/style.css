@@ -175,7 +175,8 @@ nav button {
 /*============================Post===========================*/
 
 .post_body{
-  color: gold
+  color: gold;
+width: 100%;
 
 }
 
@@ -185,6 +186,7 @@ nav button {
   border: 1rem solid var(--color-gray-900);
   overflow: hidden;
   margin-bottom: 1.6rem;
+  width: 150%;
 
 }
 
@@ -215,6 +217,8 @@ nav button {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
+  width: 100%;
+  margin-left: 4rem;
 
 }
 
