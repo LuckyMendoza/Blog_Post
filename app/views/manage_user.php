@@ -24,11 +24,20 @@
         </a>
       </li>
       <li>
+        <a href="<?php echo BASE_URL . 'Blog_post/add_category'?>" >
+          <i class="uil uil-users-alt"></i>
+          <h5>Add Category</h5>
+        </a>
+      </li>
+      <li>
         <a href="<?php echo BASE_URL . 'Blog_post/dashboard'?>" >
           <i class="uil uil-list-ul"></i>
           <h5>Manage Categories</h5>
         </a>
       </li>
+     
+
+
     <?php } ?>
     <li>
       <a href="<?php echo BASE_URL . 'Blog_post/add_post'?> " >

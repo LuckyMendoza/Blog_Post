@@ -6,11 +6,11 @@
         <div class="container form_section-container">
             <h2>Edit Category</h2>
             
-            <form action="" method="post" >
+            <form action="<?php echo BASE_URL . 'Blog_post/update_category'?>" method="post" >
               
-               
-                <input type="text" name="Title" placeholder="Title">
-                <textarea name="desciption" id=""  rows="4" placeholder="Description"></textarea>
+            <input type="hidden" name="id" value="<?php echo  $data['id'];?>">
+                <input type="text" name="Title" value=<?php echo $data['Title'];?> placeholder="Title">
+                <textarea name="description" id="" value=<?php echo $data['description'];?>  rows="4" placeholder="Description"></textarea>
                 
             
                 <button type="submit" class="btn">Update Category</button>

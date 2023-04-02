@@ -88,7 +88,7 @@ class Blog_post extends Controller {
                     
 
                     $this->session->set_flashdata(array('status', 'Successfully Added'));
-                    redirect('Blog_post/dashboard');
+                    redirect('Blog_post/manage_users');
                 
                 } else {
                     $this->session->set_flashdata( array('errors', 'Failed to Add User!.'));
@@ -109,12 +109,6 @@ class Blog_post extends Controller {
         $this->call->view('manage_user', $data);
     }
 
-//   //deleting users
-// public function delete_user($id){
-// 	$this->BlogPost_model->delete_user($id);
-// 	  redirect ('Blog_post/manage_user');
-// 	exit;
-//   }
 
 
 public function delete_user($id) {
@@ -161,6 +155,91 @@ public function update_user()
       }
     }
     
+//----------------------------------Add Category Function----------------------------//
+//add categoryy
+  public function add_category(){
+      $this->call->view('add_category');
+  }
+
+  public function addCategory(){
+    // $data = $this->BlogPost_model->get_category();
+    if ($this->form_validation->submitted()) {
+            
+        $this->form_validation
+            ->name('Title')->required()         
+            ->name('description')->required();
+
+            if ($this->form_validation->run()) {
+                if($this->BlogPost_model->add_category(
+                    $this->io->post('Title'),
+                    $this->io->post('description')
+                )){
+                    
+                    $this->session->set_flashdata(array('status', 'Category Added'));
+                    redirect('Blog_post/manage_category');
+                }else{
+                    $this->session->set_flashdata(array('status', 'Failed to Add Category'));
+                    redirect('Blog_post/add_category');
+                }
+            }
+
+                
+  }
+}
+
+public function manage_category(){
+    $data= $this->BlogPost_model->get_category();
+        $this->call->view('dashboard', $data);
+}
+
+
+  // edit category---->
+  public function edit_category($id){
+    $data= $this->BlogPost_model->edit_category($id);
+    $this->call->view('edit_category',$data);
+}
+
+
+//update category
+public function update_category()
+{
+    
+    if ($this->form_validation->submitted())
+    {
+        $this->form_validation
+        ->name('Title')->required()         
+        ->name('description')->required();
+ 
+        if($this->form_validation->run()){
+                      
+             $this->BlogPost_model->update_category(
+             $this->io->post('id'),
+             $this->io->post('Title'),
+             $this->io->post('description'));{
+         
+           $this->session->set_flashdata('status', 'Category was Successfully Updated');
+           redirect('Blog_post/manage_category');
+           
+			
+        
+            }
+         }
+      }
+    }
+    
+
+public function delete_category($id) {
+    if($this->BlogPost_model->delete_category($id)) 
+    {
+        $this->session->set_flashdata('status', 'Successfully deleted.');
+        redirect('Blog_post/manage_category');
+       
+        exit;
+    }
+}
+
+
+
 
 
      
