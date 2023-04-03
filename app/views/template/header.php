@@ -53,7 +53,7 @@
           <?php } ?>
           <ul>
            
-            <li><a href="<?=site_url('Blog_post/dashboard')?>">Dashboard</a></li>
+            <li><a href="<?=site_url('Post/manage_post')?>">Dashboard</a></li>
             <li><a href="<?php echo BASE_URL . 'User/logout'?>">Logout</a></li>
           </ul>
         </li>

@@ -7,6 +7,8 @@
 <!-- 
     <button id="show_sidebar-btn "class="sidebar_toggle"><i class="uil uil-angle-right-b"></i></button>
     <button id="hide_sidebar-btn "class="sidebar_toggle"><i class="uil uil-angle-left-b"></i></button> -->
+   
+
     <aside>
   <ul>
     <?php if(isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1) { ?>
@@ -28,7 +30,6 @@
           <h5>Add Category</h5>
         </a>
       </li>
-
       <li>
         <a href="<?php echo BASE_URL . 'Blog_post/dashboard'?>" >
           <i class="uil uil-list-ul"></i>
@@ -36,6 +37,8 @@
         </a>
       </li>
      
+
+
     <?php } ?>
     <li>
       <a href="<?php echo BASE_URL . 'Post/add_post'?> " >
@@ -52,45 +55,37 @@
   </ul>
 </aside>
 
+
+
+
 <main>
-    <h2>Manage Categories</h2>
+    <h2>Manage Post</h2>
     <table>
         <thead>
-            <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
+          <tr>
+             
+            <th>Title</th>
+            <th>Category</th>
+              <th>Edit</th>
+              <th>Delete</th>
+             
+          </tr>
+             
+                <tbody>
+                  <tr>
+                  </tr>   
+                </tbody>
+       
+              
         </thead>
-        <tbody>
-            <?php foreach ($data as $datum):?>
-                <tr>
-                    <td><?php echo $datum['Title'];?></td>
-                    <td><?php echo $datum['description'];?></td>
-                    <td><a class="btn sm" href="<?=site_url('Blog_post/edit_category/'.$datum['id'].''); ?>">Edit</a></td>
-                    <td><a class="btn danger" href="<?=site_url('Blog_post/delete_category/'.$datum['id'].''); ?>">Delete</a></td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
     </table>
 </main>
 
 
 
-
-
-
-
-
-  </div>
+</div>
 </section>
 
 
 
-
-
-
-
-
-<?php include 'template/footer.php';?> 
+  <?php include 'template/footer.php';?> 

@@ -51,23 +51,23 @@
 
   <!--=============================Post=============================================-->
 
+
+
   <section class="post">
     <div class="container post_container">
-
+  <?php foreach ($data as $datum):?>
       <article class="post">
         <div class="post_thumbnail">
-          <img src="<?php echo BASE_URL . '/public/img/doc32.jpg'?>" alt="dto ay author image" alt="blog2">
+          <img src=""  alt="dto ay author image" alt="blog2">
         </div>
+     
         <div class="post_info">
           <a href="/category-posts" class="category_button">Wild Life</a>
           <h3 class="post_title">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis, deserunt.
-
-       </p>
+            <p><?php echo $datum[''];?> </p>
           </h3>
           <p class="post_body">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. E
-      
           </p>
 
           <div class="post_author">
@@ -84,7 +84,7 @@
 
       </article>
 
-   
+      <?php endforeach; ?>
 
      
 

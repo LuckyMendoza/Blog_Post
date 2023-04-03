@@ -6,7 +6,7 @@ class Blog_post extends Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->call->model( 'BlogPost_model');
+        $this->call->model(array( 'BlogPost_model', 'User_model'));
         $this->call->library(array('database', 'session', 'form_validation'));
         $this->call->helper(array('url','alert','alert_message'));
     }
@@ -243,22 +243,5 @@ public function delete_category($id) {
 
 
      
-
-
-
-
-    //-------------------------------------------------add post function -----------//
-    public function add_post(){
-        $this->call->view('add_post');
-
-    }
-    public function addPost(){
-
-              
-    }
-
-
-
-
 }
 ?>

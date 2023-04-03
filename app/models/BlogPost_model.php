@@ -151,6 +151,39 @@ public function delete_category($id){
     }
   }
 
+
+
+  
+//-------------------------------------- Post tableee---------------------------
+
+//add user table
+public function add_post(  $title,  $n_category  , $body, $thumbnail, ) 
+{
+    $posted_at = date('Y-m-d H:i:s');
+    $data = array(
+        
+        'title' => $title,
+        'n_category' =>$n_category,
+        'body' => $body,
+        'thumbnail'=> $thumbnail,
+        'posted_at' => $posted_at
+        
+    );
+
+    $result= $this->db->table('post')->insert($data);
+    if($result){
+        return true;
+    }else {
+         return false;
+     }
+} 
+
+//retrive post table in homepage
+
+ public  function show_post(){
+     return $this->db->table('post')->get_all();
+    }
+
     
   
 }

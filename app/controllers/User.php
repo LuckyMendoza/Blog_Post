@@ -55,7 +55,7 @@ public function signin()
                         timer: 1500
                       })</script>";
     
-                     redirect('Blog_post/dashboard');
+                     redirect('Blog_post/Home');
              
              
                     //  $this->session->set_flashdata('status', 'Welcome', $username);

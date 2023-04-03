@@ -8,23 +8,24 @@
             <h2>Add Post</h2>
         
 
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="<?php echo BASE_URL. 'Post/addPost'?>" method="post" enctype="multipart/form-data">
               
                
-                <input type="text" name="Title" placeholder="Title">
-                <select name="" id="">
-                    <option value="1">Travel</option>
-                    <option value="2">Art</option>
-                    <option value="3">Sceinece</option>
-                    <option value="4"></option>
-                    <option value="5"></option>
-                    <option value="6"></option>
+                <input type="text" name="title" placeholder="Title">
+                <select name="n_category" id="" >
+                    <option value="travel">Travel</option>
+                    <option value="art">Art</option>
+                    <option value="science">Sceinece</option>
+                    <option value="music">Music</option>
+                    <option value="nature">Nature</option>
+                    <option value="animal">Animal</option>
+                   
                 </select>
                 <textarea name="body" id=""  rows="10" placeholder="Body"></textarea>
                
                 <div class="form_control">
                     <label for="thumbnail">Add Thumbnail</label>
-                    <input type="file" id="thumbnail">
+                    <input type="file" name= "thumbnail" id="thumbnail"  multiple="true"  accept="image/*" required >
                 </div>
 
             
