@@ -13,7 +13,8 @@ class Blog_post extends Controller {
 
 
     public function Home(){
-     $this->call->view('home');
+        $data['posts'] = $this->BlogPost_model->show_post();
+        $this->call->view('home', $data);
        
     }
 
