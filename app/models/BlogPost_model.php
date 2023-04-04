@@ -181,7 +181,7 @@ public function add_post(  $title,  $n_category  , $body, $thumbnail, )
 //retrive post table in homepage
 
  public  function show_post(){
-     return $this->db->table('post')->get_all();
+    return $this->db->table('post as p')->inner_join('category as c', 'c.id = p.category_id')->get_all();
     }
 
     
