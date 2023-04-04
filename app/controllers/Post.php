@@ -18,7 +18,11 @@ class Post extends Controller {
 
     //-------------------------------------------------add post function -----------//
     public function add_post(){
-        $this->call->view('add_post');
+        $this->call->database();
+        $categories = $this->db->table('category')->get_all();
+        $this->call->view('add_post', [
+            'categories' => $categories
+        ]);
 
     }
     public function addPost(){
@@ -103,5 +107,3 @@ public function showPost(){
     
 
 }
-
-?>

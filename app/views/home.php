@@ -1,28 +1,28 @@
- <?php include 'template/header.php';?> 
+ <?php include 'template/header.php'; ?>
 
 
 
 
-<!--===============================search bar============================-->
-<section class="search_bar">
-  <form action="" class="container search_bar-container" >
-    <div>
-      <i class="uil uli-search"></i>
-      <input type="search"placeholder="search">
-    </div>
-    <button type="submit" class="btn">Go </button>
-  </form>
-</section>
-<!--===============================End of search bar============================-->
+ <!--===============================search bar============================-->
+ <section class="search_bar">
+   <form action="" class="container search_bar-container">
+     <div>
+       <i class="uil uli-search"></i>
+       <input type="search" placeholder="search">
+     </div>
+     <button type="submit" class="btn">Go </button>
+   </form>
+ </section>
+ <!--===============================End of search bar============================-->
 
 
 
-
-  <!--================================Featured====================================================-->
-  <section class="featured">
+ <!--================================Featured====================================================-->
+ <!-- <section class="featured">
     <div class="container featured_container">
       <div class="post_thumbnail">
-        <img src="<?php echo BASE_URL . '/public/img/doc32.jpg'?>" alt="blog1.jpg">
+        <img src="<?php //echo BASE_URL . '/public/img/doc32.jpg'
+                  ?>" alt="blog1.jpg">
       </div>
       <div class="post_info">
         <a href="category-posts.html" class="category_button">Wild Life</a>
@@ -45,55 +45,55 @@
       </div>
 
     </div>
-  </section>
-  <!--===========================End of feature===========================-->
+  </section> -->
+ <!--===========================End of feature===========================-->
 
 
-  <!--=============================Post=============================================-->
+ <!--=============================Post=============================================-->
 
-  <section class="post">
-    <div class="container post_container">
- 
-      <article class="post">
-        <div class="post_thumbnail">
-          <img src="<?php echo BASE_URL . '/public/img/bird.jpg'?>"  alt="dto ay author image" alt="blog2">
-        </div>
-     
-        <div class="post_info">
-          <a href="/category-posts" class="category_button">Animal</a>
-          <h3 class="post_title">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. E </p>
-          </h3>
-          <p class="post_body">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. E
-          </p>
-          <div class="post_author">
-            <div class="post_author_avatar">
-              <img src="#" alt="">
-            </div>
-            <div class="post_author_info">
-              <!-- <h5>by:sasasas</h5>
+ <?php foreach ($posts as $key => $value) {?>
+   <section class="post">
+     <div class="container post_container">
+
+       <article class="post">
+         <div class="post_thumbnail">
+           <img src="<?php echo BASE_URL . '/public/img/' . $value['thumbnail'] ?>" alt="dto ay author image" alt="blog2">
+         </div>
+
+         <div class="post_info">
+           <a href="/category-posts" class="category_button"><?= $value['Title'] ?></a>
+           <h3 class="post_title">
+             <p><?= $value['title'] ?> </p>
+           </h3>
+           <p class="post_body">
+           <?= $value['body'] ?>
+           </p>
+           <div class="post_author">
+             <div class="post_author_avatar">
+               <img src="#" alt="">
+             </div>
+             <div class="post_author_info">
+               <!-- <h5>by:sasasas</h5>
               <small>February14, 2023</small> -->
+             </div>
            </div>
-          </div>
-        </div>
-      </article>
-      
-  
-    </div>
-  </section>
+         </div>
+       </article>
+     </div>
+   </section>
+ <?php } ?>
 
-  <!--======================================End of Post==================================-->
+ <!--======================================End of Post==================================-->
 
-<section class="category_buttons">
-  <div class="category_buttons-container">
-    <a href="" class="category_button">Art</a>
-    <a href="" class="category_button">Wild</a>
-    <a href="" class="category_button">Travel</a>
-    <a href="" class="category_button">Tech</a>
-    <a href="" class="category_button">Food</a>
-    <a href="" class="category_button">Music</a>
-  </div>
-</section>
+ <section class="category_buttons">
+   <div class="category_buttons-container">
+     <a href="" class="category_button">Art</a>
+     <a href="" class="category_button">Wild</a>
+     <a href="" class="category_button">Travel</a>
+     <a href="" class="category_button">Tech</a>
+     <a href="" class="category_button">Food</a>
+     <a href="" class="category_button">Music</a>
+   </div>
+ </section>
 
-<?php include 'template/footer.php';?>
+ <?php include 'template/footer.php'; ?>

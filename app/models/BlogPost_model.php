@@ -163,10 +163,10 @@ public function add_post(  $title,  $n_category  , $body, $thumbnail, )
     $data = array(
         
         'title' => $title,
-        'n_category' =>$n_category,
+        'category_id' =>$n_category,
         'body' => $body,
         'thumbnail'=> $thumbnail,
-        'posted_at' => $posted_at
+        'date_time' => $posted_at
         
     );
 
@@ -181,7 +181,7 @@ public function add_post(  $title,  $n_category  , $body, $thumbnail, )
 //retrive post table in homepage
 
  public  function show_post(){
-     return $this->db->table('post')->get_all();
+     return $this->db->table('post as p')->inner_join('category as c', 'c.id = p.category_id')->get_all();
     }
 
     

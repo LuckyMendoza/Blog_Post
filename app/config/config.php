@@ -80,8 +80,8 @@ $config['ENVIRONMENT']             = 'development';
 | WARNING: You MUST set this value!
 |
 */
-$config['base_url'] 				= 'http://localhost/Lavalods/';
-
+$config['base_url'] 				= 'http://blog_post.test/';
+// $config['base_url'] 				= 'http://localhost/Lavalods/';
 /*
 |--------------------------------------------------------------------------
 | Index File
