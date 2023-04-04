@@ -13,7 +13,7 @@ class User_model extends Model
             'password' => $password, 
             'avatar' => $avatar,
             'is_admin'=> $is_admin,
-            'craeted_at' => $created_at
+            'created_at' => $created_at
             
         );
 

@@ -8,7 +8,7 @@
 
 
 
-            <form action="<?php echo BASE_URL . 'User/signin'?> " method="post" x-data="{ form: {} }" >
+            <form action="<?php echo BASE_URL . 'User/signin'?> " method="post" >
           
                 
                 <input type="text" name="username" placeholder="Username" required>

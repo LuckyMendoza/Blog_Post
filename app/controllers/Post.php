@@ -84,15 +84,12 @@ public function manage_post(){
 }
         
 
-
-
-
-
 //---------------------------------------------------show post in Homepage--------------------
 
 public function showPost(){
-    $data= $this->BlogPost_model->show_post();
-            $this->call->view('home', $data);    
+    $data['post']= $this->BlogPost_model->show_post();
+        //    $this->call->view('home', $data);
+        var_dump($data['post']);
 }
     
 

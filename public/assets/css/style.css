@@ -242,7 +242,9 @@ width: 100%;
 
 
 
-
+article{
+  gap: 2rem;
+}
 
 
 
