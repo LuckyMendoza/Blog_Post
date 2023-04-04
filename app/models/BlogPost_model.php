@@ -166,7 +166,7 @@ public function add_post(  $title,  $n_category  , $body, $thumbnail, )
         'category_id' =>$n_category,
         'body' => $body,
         'thumbnail'=> $thumbnail,
-        'date_time' => $posted_at
+        'posted_at' => $posted_at
         
     );
 

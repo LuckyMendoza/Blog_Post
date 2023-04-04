@@ -54,7 +54,7 @@
  <?php foreach ($posts as $key => $value) {?>
    <section class="post">
      <div class="container post_container">
-
+ 
        <article class="post">
          <div class="post_thumbnail">
            <img src="<?php echo BASE_URL . '/public/img/' . $value['thumbnail'] ?>" alt="dto ay author image" alt="blog2">
@@ -79,9 +79,11 @@
            </div>
          </div>
        </article>
+     
      </div>
    </section>
- <?php } ?>
+   <?php } ?>
+
 
  <!--======================================End of Post==================================-->
 
